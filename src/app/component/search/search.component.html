@@ -1,0 +1,79 @@
+<div>
+    <div class="container col-md-6 offset-md-3 mt-5">
+        <Form [formGroup]="searchForm">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <select formControlName="searchDD" class="form-control" 
+                        [ngClass]="{ 'is-invalid': isSubmit && f['searchDD'].errors }"
+                        >
+                            <option *ngFor="let sf of searchList" [ngValue]="sf.value">
+                                {{sf.name}}
+                            </option>
+                        </select>
+                        <div *ngIf=" isSubmit && f['searchDD'].errors" class="invalid-feedback">
+                            <div *ngIf="f['searchDD'].errors['required']">Field Required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col">
+                        <div class="mb-3 col">
+                            <select formControlName="operatorDD" class="form-control" 
+                            [ngClass]="{ 'is-invalid':isSubmit && f['operatorDD'].errors }"
+                            >
+                                <option *ngFor="let sf of operatorList" [ngValue]="sf.value">
+                                    {{sf.name}}
+                                </option>
+                            </select>
+                            <div *ngIf="isSubmit && f['operatorDD'].errors" class="invalid-feedback">
+                                <div *ngIf="f['operatorDD'].errors['required']">Operator Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col">
+                        <div class="mb-3 col">
+                            <input type="text" formControlName="searchTxt" class="form-control"  
+                            placeholder="enter value"
+                            [ngClass]="{ 'is-invalid': isSubmit && f['searchTxt'].errors }"
+                            />
+                            <div *ngIf=" isSubmit && f['searchTxt'].errors" class="invalid-feedback">
+                                <div *ngIf=" isSubmit && f['searchTxt'].errors['required']">Value Required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col">
+                    </div>
+                    <div class="mb-3 col ">
+                        <span>
+                            <button class="btn btn-primary" (click) ="onSearch()" >
+                                Search
+                            </button>
+                        </span>
+                        <span>
+                            <button class="btn btn-primary" (click) ="onReset()" >
+                                Reset
+                            </button>
+                        </span>
+                        
+                        
+                    </div>
+                    <div class="mb-3 col">
+                       
+                    </div>
+                </div>
+         </Form>
+    </div>
+</div>
+
+<hr size="4" width="100%" color="blue">  
+
+    <app-viewdata *ngIf="isDataLoaded" [arrFromParent]="rowData" 
+    [searchQueryDto]="searchQueryDto"
+    ></app-viewdata>
+
+   
+   
+
+
+

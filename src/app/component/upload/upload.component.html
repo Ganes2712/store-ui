@@ -1,0 +1,28 @@
+<div>
+    <div class="container col-md-6 offset-md-3 mt-5">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label>File Upload</label>
+                    </div>
+                    <div class="mb-3 col">
+                        <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
+                    </div>   
+                 </div>
+                 <div class="row">
+                    <div class="mb-3 col">
+                        
+                    </div>
+                    <div class="mb-3 col">
+                        <span>
+                            <button class="btn btn-primary"  (click)="uploadFiles()">
+                                Upload
+                            </button>
+                        </span>
+                        <span>
+                            <button class="btn btn-primary"  >
+                                Cancel
+                            </button>
+                        </span>
+                    </div>   
+                 </div>
+</div>

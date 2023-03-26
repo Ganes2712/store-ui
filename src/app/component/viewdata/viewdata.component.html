@@ -1,0 +1,13 @@
+
+<ag-grid-angular
+  style="width: 100%; height: 40%; align-content: center;"
+  class="ag-theme-alpine"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [rowData]="productData"
+  [rowSelection]="'single'"
+  [animateRows]="true"
+  (gridReady)="onGridReady($event)"
+  (rowSelected)="rowSelectEvent($event)"
+  [pagination]="true"
+></ag-grid-angular>

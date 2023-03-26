@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+
+  .ag-theme-alpine {
+    --ag-foreground-color: rgb(42, 13, 86);
+    --ag-background-color: rgb(255, 255, 255);
+    --ag-header-foreground-color: rgb(255, 255, 255);;
+    --ag-header-background-color: rgb(5, 3, 10);
+    --ag-odd-row-background-color: rgb(224, 224, 224, 224);
+    --ag-header-column-resize-handle-color: rgb(59, 46, 132);
+  
+    --ag-font-size: 17px;
+    --ag-font-family: monospace;
+}
+
