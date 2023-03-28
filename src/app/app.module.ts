@@ -24,7 +24,7 @@ import  * as FilepondPluginImageEdit from 'filepond-plugin-image-edit';
 import  * as FilepondPluginImagePreview from 'filepond-plugin-image-preview';
 import { Ngprime } from './common/ngprime';
 import { ButtonModule } from 'primeng/button';
-
+import { FileUploadModule } from 'primeng/fileupload';
 
 registerPlugin(FilePondPluginFileValidateType,FilepondPluginImageEdit,FilepondPluginImagePreview);
 
@@ -52,7 +52,8 @@ ModuleRegistry.registerModules([
     MaterialModule,
     FilePondModule,
     Ngprime,
-    ButtonModule
+    ButtonModule,
+    FileUploadModule
   ],
   providers: [HttpapiService],
   bootstrap: [AppComponent]

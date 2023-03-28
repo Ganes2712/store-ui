@@ -16,17 +16,27 @@ export class UploadComponent {
   {}
 
   file: File = null;
+  uploadedFiles: any[] = [];
+  filesize:number=1000000;
 
 
-  onFilechange(event: any) {
-    console.log(event.target.files[0])
-    this.file = event.target.files[0]
+  uploadFiles(event: any) {
+    console.log('uploadFiles');
+
+    this.file = event.target.files[0];
+    this.uploadedFiles = [];
+    this.uploadedFiles.push(this.file);
+    
   }
 
-   uploadFiles(){
+   serverCall(event: any){
+    console.log('servercall');
+    for(let file of event.files) {
+      this.file = file;
+    }
+
     if (this.file) {
-     this.httpapi.uploadFile(this.file).subscribe(
-      
+     this.httpapi.uploadFile(this.file).subscribe(      
       resp => {
         console.log(JSON.stringify(resp.data));
                 if(resp.status){
@@ -41,10 +51,8 @@ export class UploadComponent {
                     title: 'Error in Process',
                     text: resp.data,
                   });
-                }
-
-                  
-                },
+                }                  
+        },
       (error)=>{
         Swal.fire(
           'Error in Process',
