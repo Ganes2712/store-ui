@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit{
   onReset(){
     this.searchForm.reset();  
     this.isSubmit = false;
-    this.isDataLoaded = true;
+    this.isDataLoaded = false;
   }
 
 
