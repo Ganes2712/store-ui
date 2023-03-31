@@ -45,12 +45,23 @@ export class ViewdataComponent implements OnInit
 		console.log('Edit Save Event Called');
 		this.httpapi.updateData(prod).subscribe(
 			(res)=>{
-			  console.log(JSON.stringify(res.data));
 			  Swal.fire(
 				'Price value is updated',
 				'',
 				'success'
 			  );
+			},
+			(err)=>
+			{
+				console.log('error'+JSON.stringify(err));
+				if(err.error.data.includes('must be greater than or equal to 0')){
+					Swal.fire(
+						'Price value should be > 0',
+						'',
+						'error'
+					  );
+				}
+
 			}
 		  );  
 	   

@@ -12,7 +12,6 @@ import { ViewdataComponent } from './component/viewdata/viewdata.component';
 import { ModuleRegistry } from '@ag-grid-community/core';     // @ag-grid-community/core will always be implicitly available
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 import { AgGridModule } from '@ag-grid-community/angular';
-import { UpdateComponent } from './component/update/update.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './common/material/material.module';
 // import filepond module
@@ -38,8 +37,7 @@ ModuleRegistry.registerModules([
     AppComponent,
     SearchComponent,
     UploadComponent,
-    ViewdataComponent,
-    UpdateComponent
+    ViewdataComponent
   ],
   imports: [
     BrowserModule,
